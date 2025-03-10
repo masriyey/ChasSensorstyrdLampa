@@ -10,6 +10,7 @@
 
 ## Länkar:
 
+### [SRS](https://github.com/masriyey/ChasSensorstyrdLampa/blob/main/SRS.md)
 ### [Github](https://github.com/masriyey/ChasSensorstyrdLampa)
 ### [Google Drive](https://docs.google.com/document/d/1EhLYOxIQsRwtQsxHoJ5MGX98XY1ruyxY7rxymrV0jyY/edit?pli=1&tab=t.0)
 	
