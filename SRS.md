@@ -58,8 +58,3 @@ Projektet är en smart lampa som tänds automatiskt när den upptäcker rörelse
 - Testa att lampan justerar ljusstyrkan korrekt i olika ljusnivåer.
 - Kontrollera att displayen visar korrekt information inom **1 sekund** efter ändring.
 - Testa att systemet återställs korrekt efter en simulering av mjukvarufel.
-
----
-
-Denna förbättrade SRS är avsedd att göra kraven tydligare, mätbara och mer detaljerade för att underlätta både implementation och testning av den sensorstyrda lampan.
-
