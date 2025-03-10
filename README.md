@@ -11,7 +11,8 @@
 ## Länkar:
 
 ### [SRS](https://github.com/masriyey/ChasSensorstyrdLampa/blob/main/SRS.md)
-### [Github](https://github.com/masriyey/ChasSensorstyrdLampa)
+### [Github (kod)](https://github.com/masriyey/ChasSensorstyrdLampa)
+### [Github (tavla)](https://github.com/masriyey/ChasSensorstyrdLampa/edit/main/README.md)
 ### [Google Drive](https://docs.google.com/document/d/1EhLYOxIQsRwtQsxHoJ5MGX98XY1ruyxY7rxymrV0jyY/edit?pli=1&tab=t.0)
 	
 ## Komponenter: 
