@@ -1,60 +1,64 @@
-# Sensorstyrd Lampa - Förbättrad SRS
+# Sensorstyrd Lampa 
 
 ## Introduktion
 
-Projektet är en smart lampa som tänds automatiskt när den upptäcker rörelse och justerar ljusstyrkan baserat på omgivande ljus. Om det är starkt ljus i omgivningen ska lampan lysa svagare, och om det är mörkt ska den lysa starkare. Lampan har en LCD-display som visar om lampan är på eller av och vilken ljusstyrka den har. I en framtida uppdatering ska lampan även ta hänsyn till tid på dygnet, där den lyser svagare mitt i natten för att undvika att blända.
+Projektet är en smart lampa som ska ha egenskaperna att tändas automatiskt när den upptäcker rörelse samt att den ska justera ljusstyrkan efter hur starkt ljus det är i omgivningen. Är det starkt ljus i omgivningen ska lampan lysa lite svagare, och är det mörkt i omgivningen ska den lysa starkare. Lampan har även en LCD display som talar om ifall lampan är på eller av, samt vilken ljusstyrka lampan lyser med ifall den är igång. I en framtida uppdatering ska lampan även ta hänsyn till vilken tid det är på dygnet och anpassa ljusstyrkan efter det, mitt i natten lyser den svagare för att undvika att blända människor som passerar den.
 
 ## Specifika Krav
 
 ### Funktionella Krav
 
-- Rörelsesensorn (HC-SR501) ska upptäcka rörelse inom en radie av **5 meter** och en vinkel på **120°** samt tända lampan inom **0,5 sekunder**.
-- Rörelsesensorn ska släcka lampan efter en användarspecificerad tid (t.ex. **10 sekunder**) om ingen rörelse upptäcks.
-- Fotomotståndet ska mäta ljusstyrka inom ett intervall av **0–1000 lux** och justera lampans ljusstyrka proportionerligt.
-- LCD-displayen ska visa aktuell status meddelande, till exempel: *"Lampan är På, Ljusstyrka: 70%"* eller *"Lampan är Av"*.
-- DS1302 realtidsklockmodul ska kunna justera ljusstyrkan baserat på tid på dygnet (i framtida uppdatering).
+Rörelsesensorn ska upptäcka rörelse och tända lampan.
+Rörelsesensorn ska släcka lampan om det inte varit någon rörelse på angiven tid.
+Fotomotstånd Sensorn ska mäta ljusstyrkan och justera lampans ljusstyrka därefter.
+LCD display som skriver ut ljusstyrkan på lampan samt om den är av eller på.
+DS1302 för att kunna justera ljusstyrka utefter vilken tid på dygnet det är. (eventuell framtida uppgradering)
+
 
 ### Icke-Funktionella Krav
 
-#### Prestanda
+### Prestanda
 
-- Lampan ska släckas efter angiven tid (standard: 10 sekunder) om ingen rörelse upptäcks.
-- Sensorn ska uppdateras **2 gånger per sekund** (var 500 ms).
-- LCD-displayen ska visa aktuell status inom **1 sekund** efter ändring.
-- Optimal driftstemperatur är mellan **10°C och 30°C** och luftfuktighet mellan **40% och 60%**.
-- Systemet ska kunna återställa sig från mjukvarufel inom **2 sekunder**.
+Lampan ska släckas på angiven tid efter att ingen rörelse upptäcks, med anpassning till vilket rum den är i. 
+Rörelsesensorn ska tända lampan inom 0,5 sekund vid rörelse upptäckt.
+LCD Displayen ska uppdatera status på lampan med max 1 sekunds fördröjning efter ändring.
+Optimal drift-temperatur är mellan 10 grader celsius och 30 grader celsius samt luftfuktighet mellan 40% och 60%. Normalt inomhus-klimat. 
+Sensorerna ska läsas av 1 gång var 500 millisekund.  
+Koden ska vara väl strukturerad med lätt för anpassning av förändring och vidareutveckling. 
 
-#### Säkerhet
+### Säkerhet
 
-- Systemet ska skyddas mot överspänning och kortslutning med korrekt dimensionerade resistorer.
-- En **Watchdog Timer** ska implementeras för att automatiskt återställa systemet vid mjukvarufel.
-- Korrekt jordning och isolering av strömförande delar.
+Elsäkerhet, systemet ska ha skydd mot kortslutning genom att använda rätt dimensioner på resistorer. 
+Systemet ska ha en fungerande resetfunktion vid ev problem med mjukvaran. 
 
-#### Användargränssnitt
+### Användargränssnitt
 
-- Grundläggande konfiguration, som ljusstyrka och tidsinställningar, ska kunna göras via seriell monitor i Arduino IDE.
-- Felmeddelanden och statusuppdateringar ska skrivas ut till den seriella monitorn.
+Grundläggande konfiguration kan ske via seriell monitor i Arduino IDE.
+
+
 
 ## Externa Gränssnitt
 
-### Maskinvara
 
-- **HC-SR501:** Infraröd rörelsesensor, ansluten till digital pin på Arduino.
-- **Fotomotstånd:** Ansluten till en analog ingång för att mäta ljusstyrka.
-- **DS1302 realtidsklockmodul:** Ansluten via SPI (framtida uppdatering).
-- **Arduino UNO R4 WiFi** eller kompatibel mikrokontroller.
-- **LED-lampa** med passande resistorer för strömbegränsning.
-- **Resistorer:** Anpassade för att skydda kretsar och sensorer.
+### Maskinvara 
+
+HC-SR501, Infraröd rörelsesensor
+Fotomotståndsmodul, Mäter ljusstyrka
+DS1302 realtidsklockmodul (eventuell framtida uppgradering)
+Arduino UNO R4 WiFi (eller kompatibel mikrokontroller)
+LED-lampa
+Resistor(er), för anpassning av strömstyrka
 
 ### Mjukvara
 
-- **Arduino IDE** (specificera version vid behov).
-- **Programmeringsspråk:** C++ (Arduino-kod).
-- Nödvändiga externa bibliotek, exempelvis för DS1302 och LCD-styrning.
+Ardunio IDE
+C++(Arduino-kod)
+Nödvändiga externa bibliotek (för sensorer och LCD skärm)
 
-## Testkrav
+### Testkrav
 
-- Bekräfta att rörelsesensorn tänder lampan inom **0,5 sekunder** vid upptäckt rörelse.
-- Testa att lampan justerar ljusstyrkan korrekt i olika ljusnivåer.
-- Kontrollera att displayen visar korrekt information inom **1 sekund** efter ändring.
-- Testa att systemet återställs korrekt efter en simulering av mjukvarufel.
+Bekräfta att rörelsesensorn tänder lampan inom 0.5 sekunder vid upptäckt rörelse.
+Testa att lampan justerar ljusstyrkan korrekt i olika ljusnivåer.
+Kontrollerar att displayen visar korrekt information inom 1 sekund efter ändring
+Testa att systemet återställs korrekt vid användning av reset knapp.
+Säkerställa att läsningarna från fotoresistorn är stabila. 
