@@ -10,8 +10,7 @@
 
 ## Länkar:
 
-###
-[Användarmanual](https://github.com/masriyey/ChasSensorstyrdLampa/blob/main/Manual.md) [SRS](https://github.com/masriyey/ChasSensorstyrdLampa/blob/main/SRS.md)
+### [Användarmanual](https://github.com/masriyey/ChasSensorstyrdLampa/blob/main/Manual.md) ### [SRS](https://github.com/masriyey/ChasSensorstyrdLampa/blob/main/SRS.md)
 ### [Kopplingsschema Ver 1](https://github.com/masriyey/ChasSensorstyrdLampa/blob/main/Ver_1_Chas_grupp_3%2CSensor_Lampa.pdf)
 ### [Github (kod)](https://github.com/masriyey/ChasSensorstyrdLampa)
 ### [Github (tavla)](https://github.com/users/masriyey/projects/4)
