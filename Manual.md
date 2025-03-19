@@ -119,7 +119,6 @@ Denna användarmanual beskriver installation, användning och felsökning av den
 ---
 
 ## **8. Framtida Utveckling**
-- Implementering av **DS1302 realtidsklockmodul** för att styra ljusstyrkan baserat på tid på dygnet.
 - Möjlighet att ställa in ljusstyrkans anpassning manuellt via en mobilapp.
 - **Energieffektivisering** genom optimerade algoritmer.
 
