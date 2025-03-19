@@ -1,5 +1,4 @@
-#include <LiquidCrystal_I2C.h> 
-#include "RTC.h"
+#include <LiquidCrystal_I2C.h> //Använd bibliotek 
 
 //Pins
 int ledPin = 3;
@@ -40,9 +39,6 @@ void setup()
   }
   Serial.println("Scan complete.");*/
 
-int hour;
-int minutes;
-int seconds;
 
 void setup()
 {
@@ -62,9 +58,6 @@ void setup()
   lcd.print("Lamp off");
   delay(2000);
 
-  RTC.begin();
-  RTCTime startTime(17, Month::MARCH, 2025, 21, 59, 00, DayOfWeek::MONDAY, SaveLight::SAVING_TIME_ACTIVE);
-  RTC.setTime(startTime);
 }
 
 //FUnktion som uppdaterar meddelandet vid förändringar
@@ -81,15 +74,9 @@ void updateLCD(String message1, String message2) {
 
 void loop()
 {
-  RTCTime currentTime;
-  RTC.getTime(currentTime);
-  hour = currentTime.getHour();
-  minutes = currentTime.getMinutes();
-  seconds = currentTime.getSeconds();
-
 	motionDetected = digitalRead(sensor);
   	lightSensorValue = analogRead(lightSensor);
-  
+    lightSensorValue = map(lightSensorValue, 40, 200, 0, 1023);//Gör om så den lilla "rangen" av värden blir över alla, dvs enklare att använda
   
   
     Serial.println(lightSensorValue);
@@ -102,15 +89,9 @@ void loop()
         lampOn = true;
      }
      
-
-    if(lampOn)
-           {
-          if (motionDetected == HIGH && hour > 21 || hour < 6)
-          {
-            updateLCD("Lamp on", "Nightmode 27%");
-            Serial.println("Motion detected, 27% light Nightmode");
-            analogWrite(ledPin, 18);
-          } else if (motionDetected == HIGH && lightSensorValue > 800) {
+  	  if (lampOn) 
+      {
+          if (motionDetected == HIGH && lightSensorValue > 800) {
             updateLCD("Lamp on", "Brightness 10%");
             Serial.println("Motion detected, 10% light");
             analogWrite(ledPin, 2);
@@ -123,10 +104,6 @@ void loop()
             Serial.println("Motion detected, 100% light");
             analogWrite(ledPin, 255);
           }
- 
-      
-       
-      
 
         //Kontrollera om tiden som angetts har passerat sedan 
         //senaste rörelse
@@ -134,9 +111,7 @@ void loop()
             {
           		lampOn = false;
         	}
-    	
-
-      }
+    	}
 
     // Om lampan ska vara avstängd
     	if (!lampOn)
@@ -147,4 +122,3 @@ void loop()
     	}	
   
 }
-
