@@ -11,7 +11,7 @@ Denna användarmanual beskriver installation, användning och felsökning av den
 - **Arduino UNO R4 WiFi** (eller kompatibel mikrokontroller)
 - **HC-SR501** – Infraröd rörelsesensor
 - **Fotomotstånd** – Mäter ljusstyrka
-- **DS1302 realtidsklockmodul**
+- **VRTC** - Inbyggd Real Time Clock
 - **LED-lampa**
 - **LCD 16x2-display**
 - **Resistorer** *(1KΩ och 300KΩ för anpassning av strömstyrka)*
@@ -32,7 +32,7 @@ Denna användarmanual beskriver installation, användning och felsökning av den
 - **Rörelsesensor (HC-SR501):** Upptäcker rörelse och tänder lampan.
 - **Fotomotstånd:** Mäter ljusnivån och justerar lampans ljusstyrka.
 - **LCD-display:** Visar om lampan är tänd eller släckt samt aktuell ljusstyrka.
-- **DS1302 realtidsklockmodul:** Möjliggör tidsstyrning av ljusstyrkan.
+- **VRTC - Real Time Clock:** Möjliggör tidsstyrning av ljusstyrkan.
 
 ### **Systemets beteende**
 1. När rörelse upptäcks, tänds LED-lampan automatiskt.
@@ -130,6 +130,6 @@ Den sensorstyrda lampan är en smart lösning för att automatiskt anpassa ljuss
 
 ---
 
-📅 **Datum:** 2025-03-17  
-🔖 **Version:** 1.1  
+📅 **Datum:** 2025-03-19  
+🔖 **Version:** 1.2  
 👥 **Projektgrupp:** Chas Academy grupp 3
