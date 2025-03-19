@@ -18,7 +18,8 @@ void setup()
       Serial.println(address, HEX);
     }
   }
-  Serial.println("Scan complete.");*/
+  Serial.println("Scan complete.");
+}*/
 
 //Pins
 int ledPin = 3;
@@ -28,7 +29,6 @@ int lightSensor = A3;
 //Variabler för att kolla spara läsningar
 int motionDetected = 0;
 int lightSensorValue = 0;
-
 
 //Variabler för att spara förfluten tid för LEDlampan sen senaste avläsningen
 unsigned long lastMotionTime = 0;
@@ -98,42 +98,42 @@ void loop()
   Serial.println(lightSensorValue);
   delay(100);*/
 
-    if(motionDetected == HIGH)
-    {
-        lastMotionTime = millis();
-        lampOn = true;
-    }
-  
-    if (lampOn) 
-    { 
-        if (motionDetected == HIGH && lightSensorValue > 800) 
-        {
-          lightOn(2, "Brightness 10%");
-          //Serial.println("Motion Detected, 10% Brightness"); Använd vid debugging för att se så rörelser och ljusstyrka stämmer
-        } 
-        else if (motionDetected == HIGH && lightSensorValue > 500 && lightSensorValue <= 800) 
-        {
-          lightOn(55, "Brightness 50%");
-          //Serial.println("Motion Detected, 50% Brightness"); Använd vid debugging för att se så rörelser och ljusstyrka stämmer
-        } 
-        else if (motionDetected == HIGH && lightSensorValue < 500) 
-        {
-          lightOn(255, "Brightness 100%");
-          //Serial.println("Motion Detected, 100% Brightness"); Använd vid debugging för att se så rörelser och ljusstyrka stämmer
-        }
+  if(motionDetected == HIGH)
+  {
+      lastMotionTime = millis();
+      lampOn = true;
+  }
 
-      //Kontrollera om tiden som angetts har passerat sedan 
-      //senaste rörelse
-        if (millis() - lastMotionTime > lightOnDuration) 
-        {
-            lampOn = false;
-        }
-    }
-    
-    else
-    {
-        analogWrite(ledPin, 0);
-        updateLCD("Lamp off", "");
-        //Serial.println("No motion detected"); Använd vid debugging för att se så rörelser stämmer.
-    }	
+  if (lampOn) 
+  { 
+      if (motionDetected == HIGH && lightSensorValue > 800) 
+      {
+        lightOn(2, "Brightness 10%");
+        //Serial.println("Motion Detected, 10% Brightness"); Använd vid debugging för att se så rörelser och ljusstyrka stämmer
+      } 
+      else if (motionDetected == HIGH && lightSensorValue > 500 && lightSensorValue <= 800) 
+      {
+        lightOn(55, "Brightness 50%");
+        //Serial.println("Motion Detected, 50% Brightness"); Använd vid debugging för att se så rörelser och ljusstyrka stämmer
+      } 
+      else if (motionDetected == HIGH && lightSensorValue < 500) 
+      {
+        lightOn(255, "Brightness 100%");
+        //Serial.println("Motion Detected, 100% Brightness"); Använd vid debugging för att se så rörelser och ljusstyrka stämmer
+      }
+
+    //Kontrollera om tiden som angetts har passerat sedan 
+    //senaste rörelse
+      if (millis() - lastMotionTime > lightOnDuration) 
+      {
+          lampOn = false;
+      }
+  }
+  
+  else
+  {
+      analogWrite(ledPin, 0);
+      updateLCD("Lamp off", "");
+      //Serial.println("No motion detected"); Använd vid debugging för att se så rörelser stämmer.
+  }	
 }
