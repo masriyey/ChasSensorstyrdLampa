@@ -12,7 +12,8 @@ Projektet är en smart lampa som ska ha egenskaperna att tändas automatiskt nä
 - Rörelsesensorn ska släcka lampan om det inte varit någon rörelse på angiven tid.
 - Fotomotstånd Sensorn ska mäta ljusstyrkan och justera lampans ljusstyrka därefter.
 - LCD display som skriver ut ljusstyrkan på lampan samt om den är av eller på.
-- DS1302 för att kunna justera ljusstyrka utefter vilken tid på dygnet det är. (eventuell framtida uppgradering)
+- Inbyggd RTC(Real Time Clock) för att kunna justera ljusstyrka utefter vilken tid på dygnet det är. (eventuell framtida uppgradering)
+- LDR-sensor module, läser av vilken ljusstyrka den har och skickar det till digitalpin i mikrokontrollern som justerar till HIGH/LOW.
 
 
 ### Icke-Funktionella Krav
@@ -44,10 +45,11 @@ Projektet är en smart lampa som ska ha egenskaperna att tändas automatiskt nä
 
 - HC-SR501, Infraröd rörelsesensor
 - Fotomotståndsmodul, Mäter ljusstyrka
-- DS1302 realtidsklockmodul (eventuell framtida uppgradering)
+- Använda sig utav inbyggt RTC (VRTC), (Real Time Clock)
 - Arduino UNO R4 WiFi (eller kompatibel mikrokontroller)
 - LED-lampa
 - Resistor(er), för anpassning av strömstyrka
+- LDR-module
 
 ### Mjukvara
 
