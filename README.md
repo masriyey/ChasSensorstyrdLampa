@@ -17,13 +17,6 @@
 ### [Github (tavla)](https://github.com/users/masriyey/projects/4)
 ### [Google Drive](https://docs.google.com/document/d/1EhLYOxIQsRwtQsxHoJ5MGX98XY1ruyxY7rxymrV0jyY/edit?pli=1&tab=t.0)
 	
-## Komponenter: 
-
-### Infraröd sensormodul HC SR501;
-### LDR-Modul;
-### Photoresistor;
-### LCD-Display;
-
 
 # Smart Lampa med Rörelsesensor och Ljusstyrningsfunktion
 
@@ -42,6 +35,7 @@ Anpassar LED-lampans ljusstyrka beroende på omgivande ljusnivå, mätt av en fo
 ### Arduino UNO R4 WiFi (eller kompatibel mikrokontroller)
 ### LED-lampa
 ### Resistor(er) för anpassning av strömstyrka
+### LCD-Display
 
 ## :zap: Funktionalitet
 
