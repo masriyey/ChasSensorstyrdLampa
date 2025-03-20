@@ -72,7 +72,9 @@ Denna användarmanual beskriver installation, användning och felsökning av den
 ### **Manuella justeringar**
 - **Om ljusstyrkan behöver anpassas:**
   - Ändra känsligheten på fotomotståndet genom att justera koden i Arduino IDE.
-  - *(Framtida uppdatering)* Om en realtidsklocka implementeras kan ljusstyrkan justeras baserat på tid på dygnet.
+  - Ljusstyrkan kan ändras i koden i Arduino IDE.
+  - Tiden när nightmode ska aktiveras kan ändras i koden i Arduino IDE.
+  - I ver3 kan känsligheten för mörker och när nightmode ska aktiveras justeras via den inbyggda potentiometern på LDR modulen.
 
 ### **Vad användaren kan förvänta sig**
 - Lampan släcks automatiskt om ingen rörelse upptäcks inom den inställda tidsgränsen.
