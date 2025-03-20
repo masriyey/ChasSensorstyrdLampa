@@ -20,8 +20,9 @@
 ## Komponenter: 
 
 ### Infraröd sensormodul HC SR501;
-### Fotomotståndssensormodul för ljusbarriärer.
-### DS1302 realtidsklockmodul; (Vid tid över, lägger vi på denna också);
+### LDR-Modul;
+### Photoresistor;
+### LCD-Display;
 
 
 # Smart Lampa med Rörelsesensor och Ljusstyrningsfunktion
@@ -38,7 +39,6 @@ Anpassar LED-lampans ljusstyrka beroende på omgivande ljusnivå, mätt av en fo
 
 ### HC-SR501 – Infraröd rörelsesensor
 ### Fotomotståndsmodul – Mäter ljusstyrka
-### DS1302 realtidsklockmodul (eventuell framtida uppgradering)
 ### Arduino UNO R4 WiFi (eller kompatibel mikrokontroller)
 ### LED-lampa
 ### Resistor(er) för anpassning av strömstyrka
