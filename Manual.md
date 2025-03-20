@@ -1,7 +1,7 @@
 # **Användarmanual: Sensorstyrd Lampa**
 
 ## **Introduktion**
-Denna användarmanual beskriver installation, användning och felsökning av den sensorstyrda lampan. Lampan tänds automatiskt vid rörelse och anpassar ljusstyrkan efter omgivande ljusnivå. En LCD-display visar aktuell status och ljusstyrka. En framtida uppdatering kan inkludera en realtidsklocka (DS1302) för att styra ljusstyrkan efter tid på dygnet.
+Denna användarmanual beskriver installation, användning och felsökning av den sensorstyrda lampan. Lampan tänds automatiskt vid rörelse och anpassar ljusstyrkan efter omgivande ljusnivå. En LCD-display visar aktuell status och ljusstyrka. Ver2 inkluderar en realtidsklocka som man kan ställa in för nightmode med hjälp av den inbyggda VRTC i Arduino Uno R4. Ver3 hanterar nightmode med hjälp av en LDR modul som läser av ljusstyrkan i rummet och aktiverar nightmode vid mörker via en inbyggd justerbar potentiometer. 
 
 ---
 
@@ -11,10 +11,11 @@ Denna användarmanual beskriver installation, användning och felsökning av den
 - **Arduino UNO R4 WiFi** (eller kompatibel mikrokontroller)
 - **HC-SR501** – Infraröd rörelsesensor
 - **Fotomotstånd** – Mäter ljusstyrka
+- **LDR sensor-modul** - Modul som mäter ljusstyrka (Ver3)
 - **VRTC** - Inbyggd Real Time Clock
 - **LED-lampa**
 - **LCD 16x2-display**
-- **Resistorer** *(1KΩ och 300KΩ för anpassning av strömstyrka)*
+- **Resistorer** *(1KΩ och 100KΩ för anpassning av strömstyrka)*
 - **Kablar och kopplingskort**
 
 ### **Mjukvara**
@@ -32,7 +33,8 @@ Denna användarmanual beskriver installation, användning och felsökning av den
 - **Rörelsesensor (HC-SR501):** Upptäcker rörelse och tänder lampan.
 - **Fotomotstånd:** Mäter ljusnivån och justerar lampans ljusstyrka.
 - **LCD-display:** Visar om lampan är tänd eller släckt samt aktuell ljusstyrka.
-- **VRTC - Real Time Clock:** Möjliggör tidsstyrning av ljusstyrkan.
+- **VRTC - Real Time Clock:** Möjliggör tidsstyrning av ljusstyrkan. (Ver2)
+- **LDR sensor-modul** - Modul som mäter av om det är tillräckligt mörkt för darkMode, kan justeras med inbyggd potentiometer. (Ver3)
 
 ### **Systemets beteende**
 1. När rörelse upptäcks, tänds LED-lampan automatiskt.
@@ -74,7 +76,7 @@ Denna användarmanual beskriver installation, användning och felsökning av den
 
 ### **Vad användaren kan förvänta sig**
 - Lampan släcks automatiskt om ingen rörelse upptäcks inom den inställda tidsgränsen.
-- Om ljusnivån är hög (t.ex. dagsljus) kommer lampan att lysa svagare eller inte alls.
+- Om ljusnivån är hög (t.ex. dagsljus) kommer lampan att lysa svagare.
 - Systemet kräver minimalt underhåll, men regelbunden rengöring av sensorer rekommenderas för optimal funktion.
 
 ---
