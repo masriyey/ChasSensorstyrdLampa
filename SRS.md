@@ -55,7 +55,9 @@ Projektet är en smart lampa som ska ha egenskaperna att tändas automatiskt nä
 
 - Ardunio IDE
 - C++(Arduino-kod)
-- Nödvändiga externa bibliotek (för sensorer och LCD skärm)
+- **Nödvändiga bibliotek**:
+  - **LiquidCrystal I2C by Frank de Brabander (version 1.1.2)**
+  - **RTCZero by Arduino (version 1.6.0) *(endast vid användning av realtidsklocka)***
 
 ### Testkrav
 
